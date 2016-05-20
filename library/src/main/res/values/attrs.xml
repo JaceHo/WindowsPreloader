@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WindowsPreloader">
+        <attr name="dot_color" format="color"/>
+        <attr name="dot_height" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="Themes">
+        <attr name="WindowsPreloaderStyle" format="reference"/>
+    </declare-styleable>
+</resources>

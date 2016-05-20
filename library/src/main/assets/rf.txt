@@ -1,0 +1,3 @@
+https://github.com/daimajia/NumberProgressBar
+https://android.googlesource.com/platform/development/+/master/samples/ApiDemos/src/com/example/android/apis/animation/LayoutAnimations.java#162
+Windows like progress loading bar on android.
