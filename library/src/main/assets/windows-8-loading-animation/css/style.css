@@ -46,7 +46,7 @@ body {
   }
   7% {
     transform: rotate(345deg)
-    animation-timing-function: linear;;
+    animation-timing-function: linear;
   }
   30% {
     transform: rotate(455deg);
