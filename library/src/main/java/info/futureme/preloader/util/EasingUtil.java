@@ -18,15 +18,33 @@ package info.futureme.preloader.util;
 import android.animation.TimeInterpolator;
 
 public class EasingUtil {
-    private static final float DOMAIN = 1.0f;
-    private static final float DURATION = 1.0f;
-    private static final float START = 0.0f;
+    public static  float DOMAIN = 1.0f;
+    public static  float DURATION = 1.0f;
+    public static  float START = 0.0f;
 
+    public static float easeInOut(float n){
+        double q = 0.48f - n/DURATION / 1.04f,
+                Q = Math.sqrt(0.1734f + q * q),
+                x = Q - q,
+                X = Math.pow(Math.abs(x), 1/3) * (x < 0 ? -1 : 1),
+                y = -Q - q,
+                Y = Math.pow(Math.abs(y), 1/3) * (y < 0 ? -1 : 1),
+                t = X + Y + 0.5f;
+        return (float) (DOMAIN * ((1 - t) * 3 * t * t + t * t * t) + START);
+    }
+
+    public static float easeOut(float n){
+        return (float) (DOMAIN *Math.pow(n/DURATION, 0.48) + START);
+    }
+
+    public static float linear(float n){
+        return DOMAIN*n/DURATION + START;
+    }
 
     public static class Linear {
         public static final TimeInterpolator easeNone = new TimeInterpolator() {
             public float getInterpolation(float input) {
-                return input;
+                return DOMAIN*(input/=DURATION) + START;
             }
         };
     }
